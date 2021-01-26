@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Character } from '../interfaces/db.interface';
 
 @Component({
@@ -8,13 +8,16 @@ import { Character } from '../interfaces/db.interface';
 export class AddComponent {
 
 @Input() new: Character = {name: 'add', strenght: 5}
-@Input() character:Character[] = []
+
+@Output() onNewCharacter: EventEmitter <Character> = new EventEmitter();
 
 add() {
   if (this.new.name.trim().length == 0) {
     return;
   }
-  this.character.push(this.new);
+ /*  this.character.push(this.new); */
+// console.log(this.new);
+ this.onNewCharacter.emit(this.new);
   this.new = {
     name: '',
     strenght: 0,

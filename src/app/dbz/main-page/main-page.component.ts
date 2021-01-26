@@ -20,4 +20,8 @@ export class MainPageComponent {
     name: 'Mayinbu',
     strenght: 0,
   };
+
+  addNewCharacter(event: Character){
+    this.character.push(event);
+  }
 }
