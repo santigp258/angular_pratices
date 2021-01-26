@@ -1,0 +1,19 @@
+<h3>Add {{ new.name }}</h3>
+    <hr />
+
+    <form (ngSubmit)="add()">
+      <input
+        type="text"
+        placeholder="Name"
+        name="Name"
+        [(ngModel)]="new.name"
+      />
+      <!--  [value]="new.name" (input)="changeName($event)" -->
+      <input
+        type="number"
+        placeholder="Strenght"
+        name="strenght"
+        [(ngModel)]="new.strenght"
+      />
+      <button type="submit">Add</button>
+    </form>
